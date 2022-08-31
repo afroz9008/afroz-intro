@@ -1,0 +1,335 @@
+/*
+Template Name: Bako
+Version: 1.0.0
+Author: PxlSolutions
+Author URI: http://themeforest.net/user/pxlsolutions
+Description: Personal Portfolio & Resume HTML Template
+
+[TABLE OF CONTENTS]
+
+01. Base
+02. Typography
+03. Header
+04. Skills
+05. Portfolio
+06. Clients
+07. Blog
+08. Helper
+09. Buttons
+10. Preloader
+11. Bootstrap Elements
+12. Theme Elements
+13. Slick Settings
+14. Responsive Settings
+
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap&subset=cyrillic-ext");
+@import "./sass/mixins";
+@import "./sass/base";
+@import "./sass/header";
+@import "./sass/main";
+@import "./sass/buttons";
+@import "./sass/elements";
+@import "./sass/slick";
+@import "./sass/responsive";
+
+// Demo Css - Please remove when it's unnecessary.
+
+
+:root {
+  --textColor: #fff;
+  --colordefault: #000;
+  --colorblue: #3686fef5;
+  --colororange: #FF5959;
+  --colororangetrans: #FF595978;
+}
+
+.demosection {
+  border-radius: 0;
+
+  .overlay {
+    border-radius: 0;
+  }
+
+  &.herosection {
+    padding: 100px 0;
+  }
+}
+
+.demo-content {
+  position: relative;
+  z-index: 99;
+  text-align: center;
+  color: #fff;
+
+  h1,
+  h4 {
+    color: #fff;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    margin-top: 0;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin-bottom: 0;
+    padding: 30px 0;
+  }
+}
+
+.demoitems {
+  padding: 100px 0;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.demoitem {
+  text-align: center;
+
+  img {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  h4 {
+    margin-bottom: 0;
+  }
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.backdrop {
+  animation: backdrop 0.8s alternate;
+  transition: 0.8s;
+  // height: 0%;
+  // width: 0%;
+  background-color: var(--colororangetrans);
+}
+
+@media (min-width:992px) {
+  .main-container {
+    overflow: hidden;
+  }
+
+}
+
+@keyframes backdrop {
+  0% {
+    // height: 0%;
+    width: 0%;
+    border-radius: 200%;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    // height: 100%;
+    border-radius: 0;
+    width: 100%;
+    transform: translateX(0%);
+  }
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0px 0px 6px rgb(184, 182, 182);
+  width: fit-content;
+  border-radius: 100px;
+  position: fixed;
+  z-index: 9999999;
+  bottom: 10px;
+  right: 10px;
+  transition: 1s all;
+  height: 44px;
+  overflow: hidden;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.color-picker:hover {
+  height: 390px;
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite alternate;
+}
+
+.color-badge {
+  cursor: pointer;
+  margin: 2px;
+  min-height: 40px;
+  min-width: 40px;
+  border-radius: 50px;
+  border-width: 1px;
+  display: flex;
+  overflow: hidden;
+  box-shadow: 0 0 3px var(--colorblue);
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 10px 0px var(--colorblue);
+  }
+
+  50% {
+    box-shadow: 0 0 10px 2.5px var(--textColor);
+  }
+
+  100% {
+    box-shadow: 0 0 10px 5px var(--colorblue);
+  }
+}
+
+.default-theme-text-color-1 {
+  color: var(--textColor) !important;
+}
+
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  z-index: 999999;
+  animation: loader 4s alternate;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+@keyframes loader {
+  0% {
+    display: flex;
+    z-index: 999999;
+    opacity: 1;
+  }
+
+  100% {
+    display: none;
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--colorblue);
+}
+
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
