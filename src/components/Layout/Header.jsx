@@ -14,8 +14,7 @@ const headerData = {
   designation: "Front-End Developer",
   imageThumb: "/images/favicon.jpg",
   social: {
-    facebook:
-      "https://www.facebook.com/people/Sorathiya-Afroz/100014619039836/",
+    facebook: "https://www.facebook.com/people/Sorathiya-Afroz/100014619039836/",
     instagram: "https://www.instagram.com/sorathiya_afroz/",
     youtue: "https://www.youtube.com/channel/UC_8BLELEEDJXVWsZ6f-dEfw/featured",
     dribbble: "https://dribbble.com/",
@@ -34,33 +33,17 @@ function Header({ toggleHeader, toggleHandler }) {
     <>
       <div
         style={{ position: "sticky", top: 0, zIndex: 1 }}
-        className={"mobile-header py-2 px-3 mt-4"}
+        className={
+          "mobile-header py-2 px-3 mt-4"
+        }
       >
         <button className="menu-icon mr-2" onClick={toggleHandler}>
           <span></span>
           <span></span>
           <span></span>
         </button>
-        <Link
-          to="/"
-          className="logo"
-          style={{
-            height: 40,
-            width: 40,
-            borderRadius: 25,
-            overflow: "hidden",
-          }}
-        >
-          <img
-            src={headerData.imageThumb}
-            alt={headerData.name}
-            style={{
-              height: "100%",
-              width: "100%",
-              borderRadius: "50%",
-              overflow: "hidden",
-            }}
-          />
+        <Link to="/" className="logo" style={{ height: 40, width: 40, borderRadius: 25, overflow: "hidden" }}>
+          <img src={headerData.imageThumb} alt={headerData.name} style={{ height: "100%", width: "100%", borderRadius: "50%", overflow: "hidden" }} />
         </Link>
         <Link to="/" className="site-title dot ml-2 default-theme-text-color-1">
           {headerData.name}
@@ -84,37 +67,14 @@ function Header({ toggleHeader, toggleHandler }) {
           <span aria-hidden="true">&times;</span>
         </button>
         <div className="header-inner d-flex align-items-start flex-column">
-          <Link
-            to="/"
-            className="logo"
-            style={{
-              height: 40,
-              width: 40,
-              borderRadius: 25,
-              overflow: "hidden",
-            }}
-          >
-            <img
-              src={headerData.imageThumb}
-              alt={headerData.name}
-              style={{
-                height: "100%",
-                width: "100%",
-                borderRadius: "50%",
-                overflow: "hidden",
-              }}
-            />
+          <Link to="/" className="logo" style={{ height: 40, width: 40, borderRadius: 25, overflow: "hidden" }}>
+            <img src={headerData.imageThumb} alt={headerData.name} style={{ height: "100%", width: "100%", borderRadius: "50%", overflow: "hidden" }} />
           </Link>
-          <Link
-            to="/"
-            className="site-title dot mt-3 default-theme-text-color-1"
-          >
+          <Link to="/" className="site-title dot mt-3 default-theme-text-color-1">
             {headerData.name}
           </Link>
 
-          <span className="site-slogan default-theme-text-color-1">
-            {headerData.designation}
-          </span>
+          <span className="site-slogan default-theme-text-color-1">{headerData.designation}</span>
 
           <nav>
             <ul className="vertical-menu scrollspy">
@@ -181,7 +141,7 @@ function Header({ toggleHeader, toggleHandler }) {
               <li>
                 {currentPath === "/" ? (
                   <ScrollLink
-                    onClick={toggleHandler}
+                  onClick={toggleHandler}
                     activeClass="active"
                     to="section-funfacts"
                     spy={true}
