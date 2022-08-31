@@ -40,7 +40,7 @@ Description: Personal Portfolio & Resume HTML Template
 :root {
   --textColor: #fff;
   --colordefault: #000;
-  --colorblue: #000000;
+  --colorblue: #3686fef5;
   --colororange: #FF5959;
   --colororangetrans: #FF595978;
 }
@@ -162,11 +162,11 @@ Description: Personal Portfolio & Resume HTML Template
 }
 
 .color-picker:hover {
-  height: 90px;
+  height: 390px;
 }
 
 .pulse {
-  // animation: pulse-animation 2s infinite alternate;
+  animation: pulse-animation 2s infinite alternate;
 }
 
 .color-badge {
@@ -179,17 +179,8 @@ Description: Personal Portfolio & Resume HTML Template
   display: flex;
   overflow: hidden;
   box-shadow: 0 0 3px var(--colorblue);
-  transform: rotate(45deg);
-  // animation: rotate-animation 5s infinite ease-in-out;
 }
-@keyframes rotate-animation {
-  0%{
-    transform: rotate(0deg);
-  }
-  100%{
-    transform: rotate(360deg);
-  }
-}
+
 @keyframes pulse-animation {
   0% {
     box-shadow: 0 0 10px 0px var(--colorblue);
